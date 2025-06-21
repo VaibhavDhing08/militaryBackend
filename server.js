@@ -20,5 +20,10 @@ pool.connect()
 app.use('/api/auth', authRoutes);
 app.use('/api/assets', assetRoutes);
 
+app.get('/', (req, res) => {
+  res.send('🟢 Military Asset Management Backend is running');
+});
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
