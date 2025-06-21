@@ -4,7 +4,7 @@ const User = {
   // Create a new user
   async createUser(username, passwordHash, role, base_id) {
     const result = await pool.query(
-      'INSERT INTO users (username, password, role, base_id) VALUES ($1, $2, $3, $4) RETURNING *',
+      'INSERT INTO users (username, password_hash, role, base_id) VALUES ($1, $2, $3, $4) RETURNING *',
       [username, passwordHash, role, base_id]
     );
     return result.rows[0];
